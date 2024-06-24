@@ -1,24 +1,35 @@
-// src/components/CategoryCard.js
+// Example CategoryCard component (Adjust styles as necessary)
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
+const cardSize = width * 0.4;
 
 const CategoryCard = ({ category, onPress }) => (
   <TouchableOpacity style={styles.card} onPress={onPress}>
-    <Text style={styles.text}>{category}</Text>
+    <Text style={styles.cardText}>{category}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   card: {
-    padding: 20,
-    margin: 10,
-    backgroundColor: '#f9c2ff',
-    borderRadius: 10,
+    width: cardSize,
+    height: cardSize,
+    margin: 8,
+    backgroundColor: '#1e1e1e', // Slightly lighter dark color for contrast
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 8,
   },
-  text: {
-    fontSize: 18,
+  cardText: {
+    fontSize: 16,
     fontWeight: 'bold',
+    color: '#ffffff', // Light text color
   },
 });
+
+
+
+
 
 export default CategoryCard;
