@@ -1,6 +1,6 @@
 // src/screens/HomeScreen.js
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
 import { quizzes } from '../data/quizzes';
 
@@ -10,7 +10,11 @@ const categories = [...new Set(quizzes.map(quiz => quiz.category))];
 
 return (
   <View style={styles.container}>
-    <Text style={styles.title}>Quiz Categories</Text>
+    <View style={styles.header}>
+      <Image source={require('../../assets/logo.png')} style={styles.logo} />
+      <Text style={styles.title}>Quiz Categories</Text>
+    </View>
+
     <FlatList
       data={categories}
       keyExtractor={(item) => item}
@@ -34,11 +38,23 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#121212', // Dark background color
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 28,
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#ffffff', // Light text color
-    marginBottom: 16,
+    flex: 1,
+    textAlign: 'center',
+  },
+  logo: {
+    width: 45,
+    height: 27,
+    marginLeft: 2,
   },
   row: {
     flex: 1,

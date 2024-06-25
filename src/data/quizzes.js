@@ -60,6 +60,24 @@ export const quizzes = [
         // More questions...
       ],
     },
+    {
+      category: 'Discord',
+      questions: [
+        {
+          question: 'What do i call duaa?',
+          options: ['zoulikha', 'zoubida', 'hafdh', 'Moh'],
+          answer: 'hafdh',
+          number: 1
+        },
+        {
+          question: 'Where does eve lives',
+          options: ['Ain benian', 'Ain 3owra', 'houch ri7', 'foudroul2'],
+          answer: 'foudroul2', 
+          number: 2
+        },
+        // More questions...
+      ],
+    },
     // More categories...
   ];
   

@@ -20,15 +20,23 @@ const styles = StyleSheet.create({
   question: {
     fontSize: 20,
     marginBottom: 20,
+    color: "#fff",
+    padding: 25,
+    borderBlockColor: "",
+    borderWidth: 1, // Adds a border
+    borderColor: 'rgba(255, 255, 255, 0.7)', // White border color
+    borderRadius: 7, 
   },
   option: {
     padding: 10,
     marginVertical: 5,
-    backgroundColor: '#e2e2e2',
+    backgroundColor: '#333',
     borderRadius: 5,
+    color: "#fff"
   },
   optionText: {
     fontSize: 18,
+    color: "#fff"
   },
 });
 
