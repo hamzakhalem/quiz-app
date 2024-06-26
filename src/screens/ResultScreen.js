@@ -7,8 +7,8 @@ const ResultScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.result}>Your Score: {score}/{total}</Text>
-      <Button title="Go Home" onPress={() => navigation.navigate('Home')} />
+      <Text style={styles.result}>Your Score: {score + 1}/{total}</Text>
+      <Button title="Go Home" onPress={() => navigation.navigate('WZR Quiz')} />
     </View>
   );
 };

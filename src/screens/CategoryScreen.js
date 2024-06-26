@@ -8,15 +8,18 @@ import Icon from 'react-native-vector-icons/Ionicons'; // Import Ionicons
 const CategoryScreen = ({ route, navigation }) => {
   const { category } = route.params;
   const quiz = quizzes.find(q => q.category === category);
-  console.log(quiz);
+  
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [modalVisible, setModalVisible] = React.useState(false);
   const [answerStatus, setAnswerStatus] = React.useState('');
 
   const handleAnswer = (answer) => {
+    let newscore = score;
+    console.log(score);
     if (answer === quiz.questions[currentQuestionIndex].answer) {
-      setScore(score + 1); 
+
+      setScore(score +1); 
       setAnswerStatus('Correct!');
     }
     else{
@@ -28,14 +31,15 @@ const CategoryScreen = ({ route, navigation }) => {
     setTimeout(() => {
       setModalVisible(false);
       console.log(answerStatus);
-      if(answerStatus == 'Correct!'){
-      
-      if (currentQuestionIndex < quiz.questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-      } else {
-        navigation.navigate('Result', { score, total: quiz.questions.length });
+      console.log("score",score);
+      if (answer === quiz.questions[currentQuestionIndex].answer) {
+        if (currentQuestionIndex < quiz.questions.length - 1) {
+          setCurrentQuestionIndex(currentQuestionIndex + 1);
+        } else {
+          console.log("score",score);
+          navigation.navigate('Result', { score, total: quiz.questions.length });
+        }
       }
-    }
     }, 1000);
   };
 
@@ -52,6 +56,7 @@ const CategoryScreen = ({ route, navigation }) => {
           <Icon name="arrow-back-outline" size={25} color="#fff" /> 
        </TouchableOpacity>
       <View style={styles.questionContainer}>
+       <Text style={styles.number}>{currentQuestionIndex + 1}</Text>
         <Question
           question={quiz.questions[currentQuestionIndex].question}
           options={quiz.questions[currentQuestionIndex].options}
@@ -100,6 +105,17 @@ const styles = StyleSheet.create({
      color: '#ffffff', // Light text color
     flex: 1,
     textAlign: 'center',
+  },
+  number: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333', // Light text color
+    textAlign: 'center',
+    marginLeft: 10,
+    backgroundColor: '#fff',
+    width: 30,
+    height: 30,
+    borderRadius: 15,
   },
   row: {
     flex: 1,
