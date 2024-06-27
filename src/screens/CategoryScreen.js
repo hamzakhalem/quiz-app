@@ -1,9 +1,18 @@
-// src/screens/CategoryScreen.js
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Modal } from 'react-native';
 import { quizzes } from '../data/quizzes';
 import Question from '../components/Question';
 import Icon from 'react-native-vector-icons/Ionicons'; // Import Ionicons
+
+const correctImages = [
+  require('../../assets/correct/1.png'),
+  require('../../assets/correct/2.png')
+];
+
+const incorrectImages = [
+  require('../../assets/incorrect/1.jpeg'),
+  require('../../assets/incorrect/2.jpeg')
+];
 
 const CategoryScreen = ({ route, navigation }) => {
   const { category } = route.params;
@@ -12,31 +21,28 @@ const CategoryScreen = ({ route, navigation }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [answerStatus, setAnswerStatus] = React.useState('');
+  const [answerStatus, setAnswerStatus] = React.useState(0);
+  const [resultImage, setResultImage] = React.useState(null);
 
   const handleAnswer = (answer) => {
-    let newscore = score;
-    console.log(score);
+    const randomIndex = Math.floor(Math.random() * 2); // Randomly select between 0 and 1
     if (answer === quiz.questions[currentQuestionIndex].answer) {
-
-      setScore(score +1); 
-      setAnswerStatus('Correct!');
-    }
-    else{
-      setAnswerStatus('Incorrect!');
+      setScore(score + 1);
+      setAnswerStatus(1);
+      setResultImage(correctImages[randomIndex]);
+    } else {
+      setAnswerStatus(2);
+      setResultImage(incorrectImages[randomIndex]);
     }
 
     setModalVisible(true);
 
     setTimeout(() => {
       setModalVisible(false);
-      console.log(answerStatus);
-      console.log("score",score);
-      if (answer === quiz.questions[currentQuestionIndex].answer) {
+      if (answer === quiz.questions[currentQuestionIndex].answer){
         if (currentQuestionIndex < quiz.questions.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
-          console.log("score",score);
           navigation.navigate('Result', { score, total: quiz.questions.length });
         }
       }
@@ -45,7 +51,6 @@ const CategoryScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.navigate('WZR Quiz')}>
           <Image source={require('../../assets/logo.png')} style={styles.logo} />
@@ -53,17 +58,16 @@ const CategoryScreen = ({ route, navigation }) => {
         <Text style={styles.category}>{category}</Text>
       </View>
       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Icon name="arrow-back-outline" size={25} color="#fff" /> 
-       </TouchableOpacity>
+        <Icon name="arrow-back-outline" size={25} color="#fff" /> 
+      </TouchableOpacity>
       <View style={styles.questionContainer}>
-       <Text style={styles.number}>{currentQuestionIndex + 1}</Text>
+        <Text style={styles.number}>{currentQuestionIndex + 1}</Text>
         <Question
           question={quiz.questions[currentQuestionIndex].question}
           options={quiz.questions[currentQuestionIndex].options}
           onAnswer={handleAnswer}
         />
       </View>
-      
       <Modal
         animationType="slide"
         transparent={true}
@@ -72,7 +76,13 @@ const CategoryScreen = ({ route, navigation }) => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text style={styles.answerStatus}>{answerStatus}</Text>
+            <Text style={styles.answerStatus}>
+              {answerStatus === 1 ? 'Correct!' : 'Incorrect!'}
+            </Text>
+            <Image
+              source={resultImage}
+              style={styles.resultImage}
+            />
           </View>
         </View>
       </Modal>
@@ -84,8 +94,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-     backgroundColor: '#121212',
-     color: '#fff'
+    backgroundColor: '#121212',
+    color: '#fff'
   },
   header: {
     flexDirection: 'row',
@@ -102,9 +112,14 @@ const styles = StyleSheet.create({
   category: {
     fontSize: 24,
     fontWeight: 'bold',
-     color: '#ffffff', // Light text color
+    color: '#ffffff', // Light text color
     flex: 1,
     textAlign: 'center',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 40,
+    left: 20,
   },
   number: {
     fontSize: 20,
@@ -121,7 +136,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     marginBottom: 16,
-   
   },
   questionContainer: {
     height: "55%",
@@ -143,6 +157,11 @@ const styles = StyleSheet.create({
   answerStatus: {
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  resultImage: {
+    width: 150,
+    height: 150,
+    marginTop: 10,
   },
 });
 
