@@ -1,23 +1,23 @@
 // src/data/quizzes.js
 export const quizzes = [
-    {
-      category: 'Sience',
-      questions: [
-        {
-          question: 'What is the chemical symbol for water?',
-          options: ['H2O', 'O2', 'H2', 'CO2'],
-          answer: 'H2O',
-          number: 1
-        },
-        {
-          question: 'what is the color of sky',
-          options: ['Red', 'Blue', 'Green', 'Grey'],
-          answer: 'Blue', 
-          number: 2
-        },
-        // More questions...
-      ],
-    },
+    // {
+    //   category: 'Sience',
+    //   questions: [
+    //     {
+    //       question: 'What is the chemical symbol for water?',
+    //       options: ['H2O', 'O2', 'H2', 'CO2'],
+    //       answer: 'H2O',
+    //       number: 1
+    //     },
+    //     {
+    //       question: 'what is the color of sky',
+    //       options: ['Red', 'Blue', 'Green', 'Grey'],
+    //       answer: 'Blue', 
+    //       number: 2
+    //     },
+    //     // More questions...
+    //   ],
+    // },
     {
       category: 'رياضة',
       questions: [
@@ -48,7 +48,7 @@ export const quizzes = [
         {
           question: 'اخر لقب حققه كبير لندن توتنهام',
           options: ['2004', '2009', '2007',  '2008'],
-          answer: 'جاليط', 
+          answer: '2008', 
           number: 5
         },
         // More questions...
@@ -97,18 +97,144 @@ export const quizzes = [
       ],
     },
     {
-      category: 'Discord',
+      category: 'فنون',
       questions: [
         {
-          question: 'What do i call duaa?',
-          options: ['zoulikha', 'zoubida', 'hafdh', 'Moh'],
-          answer: 'hafdh',
+          question: 'من القائل "سوق مك يحل فليل"؟',
+          options: ['فريدة صابونجي', 'جلطي', 'عثمان عريوات', 'مصطفى بوجاجة'],
+          answer: 'عثمان عريوات',
           number: 1
         },
         {
-          question: 'Where does eve lives',
-          options: ['Ain benian', 'Ain 3owra', 'houch ri7', 'foudroul2'],
-          answer: 'foudroul2', 
+          question: 'ماهو الرقم المميز الذي ذكره لابرانتي',
+          options: ['106', '29', 'ماميدو', 'انت'],
+          answer: '106', 
+          number: 2
+        },
+        {
+          question: 'ماكانت اغنية جلطي في فيلمه الممل',
+          options: ['حبيت انا نشري', 'جبيت انا بنت السلطان', 'حبيت انا نكبر معاك', 'يالزينة ديري لاتاي'],
+          answer: 'حبيت انا نكبر معاك', 
+          number: 2
+        },
+        {
+          question:'في اي سنة عرض اول موسم من عاشور العشر',
+          options: ['2014', '2016', '2024', '2015'],
+          answer: '2015', 
+          number: 2
+        },
+        {
+          question:'ماهو الفيلم الجزائري الحائز على الاوسكار',
+          options: ['le puit', 'que le jour doit a la nuit', 'Z', 'معركة الجزائر'],
+          answer: 'ًZ', 
+          number: 2
+        },
+        // More questions...
+      ],
+    },
+    {
+      category: 'تاريخ',
+      questions: [
+        {
+          question: 'متى بدات ثورة التحرير',
+          options: ['1945', '1954', '1955', 'مور الحرب العالمية الثانية'],
+          answer: '1954',
+          number: 1
+        },
+        {
+          question: 'من كان وراء حادثة المروحة',
+          options: ['حسين الفيزا', 'حسين لميكانسيان', 'حسين الداي', 'حسين ايت احمد'],
+          answer: 'حسين داي', 
+          number: 2
+        },
+        {
+          question: ' من المدبرس الذي حاول احتلال اوروبا بالفيل',
+          options: ['موح الحر', 'ابرهة الحبشي', 'كريم زياني', 'حنبعل'],
+          answer: 'حنبعل', 
+          number: 2
+        },
+        {
+          question:'من احتل فرنسا في سويعات معدودة',
+          options: ['الرسام النمساوي', 'نابوليون', 'راغنار لوثربورك', 'هيملر'],
+          answer: 'الرسام النمساوي', 
+          number: 2
+        },
+        {
+          question:'من قائد ومؤسس الدولة الزيرية التي ورثنا اسمها',
+          options: ['حماد بن زيري', 'المنصور بن زيري', 'بولوغين بن مناد بن زيري', 'زيري بن عطية'],
+          answer: 'بولوغين بن مناد بن زيري', 
+          number: 2
+        },
+        // More questions...
+      ],
+    },
+    {
+      category: 'علوم',
+      questions: [
+        {
+          question: 'من مكتشف الجاذبية',
+          options: ['ستيف جوبز', 'هارلي كويين', 'مصطفى بويفر', 'اسحاق نيوتن'],
+          answer: 'اسحاق نيوتن',
+          number: 1
+        },
+        {
+          question: 'ما هي النظرية التي عرف بيها اينشتاين',
+          options: ['النظرية الكمية', 'نظرية الارض مسطحة', 'نظرية النسبية', 'نظرية الفستق'],
+          answer: 'نظرية النسبية', 
+          number: 2
+        },
+        {
+          question: 'من مخترع التيار المتناوب',
+          options: ['نيكولاس تيسلا', 'توماس ايدسون', 'جيريمي كلاركسون', 'لفاندوفسكي'],
+          answer: 'نيكولا تيسلا', 
+          number: 2
+        },
+        {
+          question:'لولاه لما كان باستطاعنا صنع هادا التطبيق',
+          options: [ 'الطبري', 'القرطبي', 'الرازي', 'الخورزمي'],
+          answer: 'الخورزمي', 
+          number: 2
+        },
+        {
+          question:'من مخترع سلاسل التصنيع الحديثة',
+          options: ['نيكوزي موتا', 'كوينت بوش', 'هنري فورد',  'مرسيدس بنز المؤسس'],
+          answer: 'هنري فورد', 
+          number: 2
+        },
+        // More questions...
+      ],
+    },
+    {
+      category: 'جغرافيا',
+      questions: [
+        {
+          question: 'اطول قمة في الجزائر ؟',
+          options: ['قمة لالة خدية', 'قمة اتاكور',  'قمة رياض محرز',  'قمة جبل كوكو'],
+          answer: 'قمة اتاكور',
+          number: 1
+        },
+        {
+          question: 'ماهي عاصمة تونس',
+          options: ['تونس', 'رويبة الصناعية',  'قرطاج',  'سفاقص'],
+          answer: 'تونس', 
+          number: 2
+        },
+        {
+          question: 'من مخترع التيار المتناوب',
+          options: ['نيكولاس تيسلا', 'توماس ايدسون', 'جيريمي كلاركسون', 'لفاندوفسكي'],
+          answer: 'نيكولا تيسلا', 
+          number: 2
+        },
+        {
+          question:'لولاه لما كان باستطاعنا صنع هادا التطبيق',
+          options: [ 'الطبري', 'القرطبي', 'الرازي', 'الخورزمي'],
+          answer: 'الخورزمي', 
+          number: 2
+        },
+        {
+          question:'من مخترع سلاسل التصنيع الحديثة',
+          options: ['نيكوزي موتا', 'كوينت بوش', 'هنري فورد',  'مرسيدس بنز المؤسس'],
+          answer: 'هنري فورد', 
           number: 2
         },
         // More questions...
