@@ -20,6 +20,7 @@ export const quizzes = [
     // },
     {
       category: 'رياضة',
+      icon: "",
       questions: [
         {
           question: 'من اللاعب الذي سجل ضد مصر في ام درمان',
@@ -56,6 +57,7 @@ export const quizzes = [
     },
     {
       category: 'سياسة',
+      icon: "",
       questions: [
         {
           question: 'من القائل  "جوع كلبك يتبع" ؟',
@@ -98,6 +100,7 @@ export const quizzes = [
     },
     {
       category: 'فنون',
+      icon: "",
       questions: [
         {
           question: 'من القائل "سوق مك يحل فليل"؟',
@@ -134,6 +137,7 @@ export const quizzes = [
     },
     {
       category: 'تاريخ',
+      icon: "",
       questions: [
         {
           question: 'متى بدات ثورة التحرير',
@@ -170,6 +174,7 @@ export const quizzes = [
     },
     {
       category: 'علوم',
+      icon: "",
       questions: [
         {
           question: 'من مكتشف الجاذبية',
@@ -206,6 +211,7 @@ export const quizzes = [
     },
     {
       category: 'جغرافيا',
+      icon: "",
       questions: [
         {
           question: 'اطول قمة في الجزائر ؟',
@@ -220,21 +226,21 @@ export const quizzes = [
           number: 2
         },
         {
-          question: 'من مخترع التيار المتناوب',
-          options: ['نيكولاس تيسلا', 'توماس ايدسون', 'جيريمي كلاركسون', 'لفاندوفسكي'],
-          answer: 'نيكولا تيسلا', 
+          question: 'ما اسم الفناة التي تربط البحر الاحمر بالابيض',
+          options: ['قزوين', 'جبل طارق', ' بنما', 'السويس'],
+          answer: 'السويس', 
           number: 2
         },
         {
-          question:'لولاه لما كان باستطاعنا صنع هادا التطبيق',
-          options: [ 'الطبري', 'القرطبي', 'الرازي', 'الخورزمي'],
-          answer: 'الخورزمي', 
+          question:'في قارة تقع جبال الهيمالايا',
+          options: [ 'اسيا', 'اوروبا', 'امريكا اللاتنية', 'امريكا الشمالية'],
+          answer: 'اسيا', 
           number: 2
         },
         {
-          question:'من مخترع سلاسل التصنيع الحديثة',
-          options: ['نيكوزي موتا', 'كوينت بوش', 'هنري فورد',  'مرسيدس بنز المؤسس'],
-          answer: 'هنري فورد', 
+          question:'ما هي اعلى قمة في افريقا ',
+          options: ['اتاكور',  'توبقال', 'كليمنجارو',  'بولغا'],
+          answer: 'كليمنجارو', 
           number: 2
         },
         // More questions...
