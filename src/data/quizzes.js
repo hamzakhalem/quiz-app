@@ -20,7 +20,7 @@ export const quizzes = [
     // },
     {
       category: 'رياضة',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'من اللاعب الذي سجل ضد مصر في ام درمان',
@@ -57,7 +57,7 @@ export const quizzes = [
     },
     {
       category: 'سياسة',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'من القائل  "جوع كلبك يتبع" ؟',
@@ -100,7 +100,7 @@ export const quizzes = [
     },
     {
       category: 'فنون',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'من القائل "سوق مك يحل فليل"؟',
@@ -137,7 +137,7 @@ export const quizzes = [
     },
     {
       category: 'تاريخ',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'متى بدات ثورة التحرير',
@@ -174,7 +174,7 @@ export const quizzes = [
     },
     {
       category: 'علوم',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'من مكتشف الجاذبية',
@@ -211,7 +211,7 @@ export const quizzes = [
     },
     {
       category: 'جغرافيا',
-      icon: "",
+      icon: " ",
       questions: [
         {
           question: 'اطول قمة في الجزائر ؟',
