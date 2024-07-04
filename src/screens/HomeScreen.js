@@ -15,7 +15,7 @@ return (
       <Text style={styles.title}>Quiz Categories</Text>
     </View>
     
-    {/* <FlatList
+    <FlatList
       data={categories}
       keyExtractor={(item) => item}
       renderItem={({ item }) => (
@@ -26,7 +26,7 @@ return (
       )}
       numColumns={2}
       columnWrapperStyle={styles.row}
-    /> */}
+    />
   </View>
 );
 };
