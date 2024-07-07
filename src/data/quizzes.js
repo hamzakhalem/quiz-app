@@ -20,7 +20,7 @@ export const quizzes = [
     // },
     {
       category: 'رياضة',
-      icon: "",
+      icon: require('../.././assets/catimg/sport.svg"'),
       questions: [
         {
           question: 'من اللاعب الذي سجل ضد مصر في ام درمان',
