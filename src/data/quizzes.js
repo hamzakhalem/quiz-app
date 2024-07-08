@@ -1,4 +1,6 @@
 // src/data/quizzes.js
+import sportIcon from '../../assets/catimg/sport.svg';
+
 export const quizzes = [
     // {
     //   category: 'Sience',
@@ -20,7 +22,7 @@ export const quizzes = [
     // },
     {
       category: 'رياضة',
-      icon: require('../.././assets/catimg/sport.svg"'),
+      icon: sportIcon,
       questions: [
         {
           question: 'من اللاعب الذي سجل ضد مصر في ام درمان',
