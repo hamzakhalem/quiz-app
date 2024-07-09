@@ -1,5 +1,4 @@
 // src/data/quizzes.js
-import sportIcon from '../../assets/catimg/sport.svg';
 
 export const quizzes = [
     // {
@@ -22,7 +21,6 @@ export const quizzes = [
     // },
     {
       category: 'رياضة',
-      icon: sportIcon,
       questions: [
         {
           question: 'من اللاعب الذي سجل ضد مصر في ام درمان',
@@ -59,7 +57,6 @@ export const quizzes = [
     },
     {
       category: 'سياسة',
-      icon: " ",
       questions: [
         {
           question: 'من القائل  "جوع كلبك يتبع" ؟',
@@ -102,7 +99,6 @@ export const quizzes = [
     },
     {
       category: 'فنون',
-      icon: " ",
       questions: [
         {
           question: 'من القائل "سوق مك يحل فليل"؟',
@@ -139,7 +135,6 @@ export const quizzes = [
     },
     {
       category: 'تاريخ',
-      icon: " ",
       questions: [
         {
           question: 'متى بدات ثورة التحرير',
@@ -176,7 +171,6 @@ export const quizzes = [
     },
     {
       category: 'علوم',
-      icon: " ",
       questions: [
         {
           question: 'من مكتشف الجاذبية',
@@ -213,7 +207,6 @@ export const quizzes = [
     },
     {
       category: 'جغرافيا',
-      icon: " ",
       questions: [
         {
           question: 'اطول قمة في الجزائر ؟',

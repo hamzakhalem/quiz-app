@@ -24,7 +24,6 @@ const HomeScreen = ({ navigation }) => {
             <CategoryCard
               category={item}
               onPress={() => navigation.navigate('Category', { category: item })}
-              svgSource={categoryQuiz.icon } // default icon if icon not found
             />
           );
         }}
