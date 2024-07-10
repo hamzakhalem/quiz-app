@@ -8,10 +8,6 @@ const cardSize = width * 0.4;
 
 const CategoryCard = ({ category, onPress }) => (
   <TouchableOpacity style={styles.card} onPress={onPress}>
-    <SvgUri
-      width="50%"
-      height="50%"
-    />
     <Text style={styles.cardText}>{category}</Text>
   </TouchableOpacity>
 );
