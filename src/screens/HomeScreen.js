@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
         <Image source={require('../../assets/logo.png')} style={styles.logo} />
         <Text style={styles.title}>Quiz Categories</Text>
       </View>
-      
+      <Text style={styles.hi}>اهلا يا مغفل</Text>
       <FlatList
         data={categories}
         keyExtractor={(item) => item}
@@ -52,6 +52,13 @@ const styles = StyleSheet.create({
     color: '#ffffff', // Light text color
     flex: 1,
     textAlign: 'center',
+  },
+  hi: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#ffffff', // Light text color
+    flex: 1,
+    textAlign: 'right',
   },
   logo: {
     width: 45,
