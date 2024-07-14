@@ -1,27 +1,16 @@
 // App.js
 import 'react-native-gesture-handler';
-import React, { useEffect }  from 'react';
+import React  from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { getDBConnection, createTables } from './src/database/Database';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
 import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
-// import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
-
+ 
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
-  // useEffect(() => {
-  //   const initDB = async () => {
-  //     const db = await getDBConnection();
-  //     await createTables(db);
-  //   };
-
-  //   initDB();
-  // }, []);
 
   return (
     <NavigationContainer
