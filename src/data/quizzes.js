@@ -109,7 +109,7 @@ export const quizzes = [
         {
           question:'ماهو الفيلم الجزائري الحائز على الاوسكار',
           options: ['le puit', 'que le jour doit a la nuit', 'Z', 'معركة الجزائر'],
-          answer: 'ًZ', 
+          answer: 'Z', 
           number: 2
         },
         // More questions...
