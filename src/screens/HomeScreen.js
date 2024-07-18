@@ -3,11 +3,23 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
 import { quizzes } from '../data/quizzes';
+import { getDBConnection, createTables, insertProgress, getProgress } from '../data/database';
 
 const HomeScreen = ({ navigation }) => {
   
   const categories = [...new Set(quizzes.map(quiz => quiz.category))];
+  const [userProgress, setUserProgress] = useState([]);
 
+  useEffect(() => {
+      const initDB = async () => {
+          const db = await getDBConnection();
+          await createTables(db);
+          // Example insert progress
+          const progress = await getProgress(db, 1);
+          setUserProgress(progress);
+      };
+      initDB();
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
