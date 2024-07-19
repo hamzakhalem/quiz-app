@@ -23,7 +23,14 @@ const CategoryScreen = ({ route, navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [answerStatus, setAnswerStatus] = React.useState(0);
   const [resultImage, setResultImage] = React.useState(null);
-
+  useEffect(() => {
+    const initDB = async () => {
+        const db = await getDBConnection();
+        const progress = await getProgress(db, 1);
+        setUserProgress(progress);
+    };
+    initDB();
+}, []);
   const handleAnswer = (answer) => {
     const randomIndex = Math.floor(Math.random() * 2); // Randomly select between 0 and 1
     if (answer === quiz.questions[currentQuestionIndex].answer) {
