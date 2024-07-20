@@ -31,7 +31,9 @@ const CategoryScreen = ({ route, navigation }) => {
     };
     initDB();
 }, []);
-  const handleAnswer = (answer) => {
+
+
+const handleAnswer = (answer) => {
     const randomIndex = Math.floor(Math.random() * 2); // Randomly select between 0 and 1
     if (answer === quiz.questions[currentQuestionIndex].answer) {
       setScore(score + 1);
