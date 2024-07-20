@@ -49,3 +49,16 @@ export const getProgress = async (db, user_id) => {
     });
     return progress;
 };
+
+export const viewProgress = async (db, user_id) => {
+    const selectQuery = `
+        SELECT * FROM user_progress WHERE user_id = ?;
+    `;
+    const [results] = await db.executeSql(selectQuery, [user_id]);
+    let progress = [];
+    results.rows.raw().forEach(row => {
+        progress.push(row);
+    });
+    return progress;
+};
+
