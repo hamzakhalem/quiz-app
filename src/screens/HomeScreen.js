@@ -1,5 +1,5 @@
 // src/screens/HomeScreen.js
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
 import { quizzes } from '../data/quizzes';

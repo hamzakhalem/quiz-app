@@ -38,16 +38,19 @@ export const insertProgress = async (db, user_id, category, progress) => {
     await db.executeSql(insertQuery, [user_id, category, progress]);
 };
 
-export const getProgress = async (db, user_id) => {
+export const getProgress = async (db, user_id, category) => {
     const selectQuery = `
-        SELECT * FROM user_progress WHERE user_id = ?;
+        SELECT progress FROM user_progress WHERE user_id = ? and category= ? ;
     `;
-    const [results] = await db.executeSql(selectQuery, [user_id]);
-    let progress = [];
-    results.rows.raw().forEach(row => {
-        progress.push(row);
-    });
-    return progress;
+    const [results] = await db.executeSql(selectQuery, [user_id, category]);
+    const progress = results.rows.raw();
+
+    if (progress.length > 0) {
+        return progress[0].progress; // Return the first row
+    } else {
+        insertProgress(db, user_id, category, 0) 
+        return 0; // Return null if no rows found
+    }
 };
 
 export const viewProgress = async (db, user_id) => {

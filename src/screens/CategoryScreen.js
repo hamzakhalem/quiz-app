@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect}  from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Modal } from 'react-native';
 import { quizzes } from '../data/quizzes';
+import { getDBConnection, createTables, insertProgress, getProgress } from '../data/database';
 import Question from '../components/Question';
 import Icon from 'react-native-vector-icons/Ionicons'; // Import Ionicons
 
@@ -23,11 +24,14 @@ const CategoryScreen = ({ route, navigation }) => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [answerStatus, setAnswerStatus] = React.useState(0);
   const [resultImage, setResultImage] = React.useState(null);
+  let progress = 0;
+  let db = null;
   useEffect(() => {
     const initDB = async () => {
-        const db = await getDBConnection();
-        const progress = await getProgress(db, 1);
-        setUserProgress(progress);
+         db = await getDBConnection();
+        progress = await getProgress(db, 1, category);
+        console.log(progress);
+        // setUserProgress(progress);
     };
     initDB();
 }, []);
@@ -39,6 +43,8 @@ const handleAnswer = (answer) => {
       setScore(score + 1);
       setAnswerStatus(1);
       setResultImage(correctImages[randomIndex]);
+      console.log(progress);
+      insertProgress(db, 1, category, progress +1) 
     } else {
       setAnswerStatus(2);
       setResultImage(incorrectImages[randomIndex]);
