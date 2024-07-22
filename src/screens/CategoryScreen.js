@@ -31,6 +31,7 @@ const CategoryScreen = ({ route, navigation }) => {
          db = await getDBConnection();
         progress = await getProgress(db, 1, category);
         console.log(progress);
+        setCurrentQuestionIndex(progress);
         // setUserProgress(progress);
     };
     initDB();
