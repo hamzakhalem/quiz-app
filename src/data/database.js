@@ -46,9 +46,11 @@ export const getProgress = async (db, user_id, category) => {
     const progress = results.rows.raw();
 
     if (progress.length > 0) {
-        return progress[0].progress; // Return the first row
+        console.log("isnide 49 ", progress);
+        return progress[progress.length -1].progress; // Return the first row
     } else {
-        insertProgress(db, user_id, category, 0) 
+        console.log("isnide 52 ", progress);
+        insertProgress(db, user_id, category, 0) ;
         return 0; // Return null if no rows found
     }
 };

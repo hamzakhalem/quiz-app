@@ -14,9 +14,9 @@ const HomeScreen = ({ navigation }) => {
       const initDB = async () => {
           const db = await getDBConnection();
           await createTables(db);
-          // Example insert progress
-          const progress = await getProgress(db, 1);
-          setUserProgress(progress);
+          // // Example insert progress
+          // const progress = await getProgress(db, 1);
+          // setUserProgress(progress);
       };
       initDB();
   }, []);

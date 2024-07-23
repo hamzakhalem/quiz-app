@@ -28,7 +28,7 @@ const CategoryScreen = ({ route, navigation }) => {
   let db = null;
   useEffect(() => {
     const initDB = async () => {
-         db = await getDBConnection();
+        db = await getDBConnection();
         progress = await getProgress(db, 1, category);
         console.log(progress);
         setCurrentQuestionIndex(progress);
@@ -44,8 +44,7 @@ const handleAnswer = (answer) => {
       setScore(score + 1);
       setAnswerStatus(1);
       setResultImage(correctImages[randomIndex]);
-      console.log(progress);
-      insertProgress(db, 1, category, progress +1) 
+      insertProgress(db, 1, category, currentQuestionIndex) 
     } else {
       setAnswerStatus(2);
       setResultImage(incorrectImages[randomIndex]);
