@@ -44,7 +44,8 @@ const handleAnswer = (answer) => {
       setScore(score + 1);
       setAnswerStatus(1);
       setResultImage(correctImages[randomIndex]);
-      insertProgress(db, 1, category, currentQuestionIndex) 
+     
+     
     } else {
       setAnswerStatus(2);
       setResultImage(incorrectImages[randomIndex]);
@@ -57,6 +58,8 @@ const handleAnswer = (answer) => {
       if (answer === quiz.questions[currentQuestionIndex].answer){
         if (currentQuestionIndex < quiz.questions.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
+          console.log(currentQuestionIndex);
+          insertProgress(db, 1, category, currentQuestionIndex);
         } else {
           navigation.navigate('Result', { score, total: quiz.questions.length });
         }
