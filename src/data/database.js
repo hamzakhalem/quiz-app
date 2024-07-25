@@ -31,10 +31,10 @@ export const createTables = async (db) => {
 };
 
 export const insertProgress = async (db, user_id, category, progress) => {
+    console.log("progress 34", progress);
     const insertQuery = `
-        INSERT INTO user_progress (user_id, category, progress)
-        VALUES (?, ?, ?);
-    `;
+    INSERT INTO user_progress (user_id, category, progress) VALUES (?, ?, ?);
+`;
     await db.executeSql(insertQuery, [user_id, category, progress]);
 };
 

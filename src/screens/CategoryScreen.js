@@ -53,13 +53,14 @@ const handleAnswer = (answer) => {
 
     setModalVisible(true);
 
-    setTimeout(() => {
+    setTimeout(async () => {
       setModalVisible(false);
       if (answer === quiz.questions[currentQuestionIndex].answer){
         if (currentQuestionIndex < quiz.questions.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
-          console.log(currentQuestionIndex);
-          insertProgress(db, 1, category, currentQuestionIndex);
+          console.log("score",currentQuestionIndex);
+          db = await getDBConnection();
+          insertProgress(db, 1, category, currentQuestionIndex +1);
         } else {
           navigation.navigate('Result', { score, total: quiz.questions.length });
         }
