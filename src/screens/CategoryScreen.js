@@ -30,7 +30,6 @@ const CategoryScreen = ({ route, navigation }) => {
     const initDB = async () => {
         db = await getDBConnection();
         progress = await getProgress(db, 1, category);
-        console.log(progress);
         setCurrentQuestionIndex(progress);
         // setUserProgress(progress);
     };
@@ -58,7 +57,6 @@ const handleAnswer = (answer) => {
       if (answer === quiz.questions[currentQuestionIndex].answer){
         if (currentQuestionIndex < quiz.questions.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex + 1);
-          console.log("score",currentQuestionIndex);
           db = await getDBConnection();
           insertProgress(db, 1, category, currentQuestionIndex +1);
         } else {
