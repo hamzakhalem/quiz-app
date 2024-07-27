@@ -18,6 +18,7 @@ const HomeScreen = ({ navigation }) => {
       initDB();
   }, []);
   return (
+    
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require('../../assets/logo.png')} style={styles.logo} />

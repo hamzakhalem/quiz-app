@@ -2,6 +2,7 @@
 
 
 export const quizzes = [
+  
     {
       category: 'رياضة',
       questions: [

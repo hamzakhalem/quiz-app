@@ -2,7 +2,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 
-
 const { width } = Dimensions.get('window');
 const cardSize = width * 0.4;
 
@@ -11,6 +10,7 @@ const CategoryCard = ({ category, onPress }) => (
     <Text style={styles.cardText}>{category}</Text>
   </TouchableOpacity>
 );
+
 
 const styles = StyleSheet.create({
   card: {
