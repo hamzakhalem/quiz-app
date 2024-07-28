@@ -2,7 +2,7 @@
 
 
 export const quizzes = [
-  
+
     {
       category: 'رياضة',
       questions: [
@@ -90,6 +90,7 @@ export const quizzes = [
           answer: 'عثمان عريوات',
           number: 1
         },
+        
         {
           question: 'ماهو الرقم المميز الذي ذكره لابرانتي',
           options: ['106', '29', 'ماميدو', 'انت'],
