@@ -90,7 +90,7 @@ export const quizzes = [
           answer: 'عثمان عريوات',
           number: 1
         },
-        
+
         {
           question: 'ماهو الرقم المميز الذي ذكره لابرانتي',
           options: ['106', '29', 'ماميدو', 'انت'],
@@ -218,7 +218,7 @@ export const quizzes = [
           number: 2
         },
         {
-          question:'ما هي اعلى قمة في افريقا ',
+          question:'ما هي اعلى قمة في افريقيا ',
           options: ['اتاكور',  'توبقال', 'كليمنجارو',  'بولغا'],
           answer: 'كليمنجارو', 
           number: 2
