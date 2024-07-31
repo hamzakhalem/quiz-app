@@ -11,7 +11,6 @@ const CategoryCard = ({ category, onPress }) => (
   </TouchableOpacity>
 );
 
-
 const styles = StyleSheet.create({
   card: {
     width: cardSize,
