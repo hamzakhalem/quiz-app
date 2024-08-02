@@ -12,7 +12,6 @@ const ResultScreen = ({ route, navigation }) => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
-  
+
 });
 
 export default ResultScreen;
